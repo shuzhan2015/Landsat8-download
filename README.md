@@ -33,4 +33,26 @@ the installation instruction is:
  ```sh
   $ cd $HOME/Landsat8-download
  ```
- You can run the python script by passing arguments to it. This python script can take different 
+ You can run the python script by passing arguments to it. This python script can take different forms
+ of arguments combinations. 
+ 
+ The script takes three arguments, which are the path, row and the date of the data you want to download.
+ The date could be in the format yyyymmdd, yyyyjjj, yymmdd, yyjjj, or mmdd. So, you could run the script by
+ passing the three arguments like this:
+ ```sh
+  $ ./download_landsat8.py --path 22 --row 39 --date 20170401
+ ```
+ Or, simply like this:
+ ```sh
+  $ ./download_landsat8.py -p 22 -r 39 -d 20170401
+ ```
+  Or, If the date argument is omitted, then the latest date available will be downloaded:
+  ```sh
+    $ ./download_landsat8.py -p 22 -r 39
+  ```
+  Or, you can also specify the path and row in the config file. Change the path and row in 
+  config file, do not put a zero before the path and row number. So you can aslo run the script 
+  by omitting the path and row arguments:
+  ```sh
+    $ ./download_landsat8.py -d 20170401
+  ```
