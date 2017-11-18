@@ -49,12 +49,13 @@ the installation instruction is:
  ```
   Or, If the date argument is omitted, then the latest date available will be downloaded:
   ```sh
-    $ ./download_landsat8.py -p 22 -r 39
+  $ ./download_landsat8.py -p 22 -r 39
   ```
   Or, you can also specify the path and row in the config file. Change the path and row in 
   config file, do not put a zero before the path and row number: 
   ```sh
-    $ ./download_landsat8.py -d 20170401
+  $ vim config
+  $ ./download_landsat8.py -d 20170401
   ```
   The downloaded file is in a compressed bz and tar format. The script will automatically 
   unzip the bz file and untar the tar file. It will also create the corresponding directory 
