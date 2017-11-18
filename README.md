@@ -9,8 +9,8 @@ installed on your laptop or computer. If you are using Windows, the
 installation instruction from Google is [here][]. For MacOS/Linux users, 
 the installation instruction is:
 
-1. Enter the following at a command prompt:
-```sh
+ 1. Enter the following at a command prompt:
+ ```sh
   $ curl https://sdk.cloud.google.com | bash
  ```
  2. Restart your shell:
