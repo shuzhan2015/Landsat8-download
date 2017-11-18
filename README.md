@@ -1,6 +1,7 @@
 # Landsat8-download
 This python script can automate the work of downloading Landsat 8 data
 from Google Cloud Storage using Google's gsutil tool and then extract the bz file.
+You can read more about the Google Cloud Storage public datasets project for [Landsat Data][]. 
 
 ## Prerequisites
 You need to have the Google Cloud Storage `gsutil` command line tool 
@@ -56,3 +57,7 @@ the installation instruction is:
   ```sh
     $ ./download_landsat8.py -d 20170401
   ```
+
+  <!--refs-->
+  [here]: https://cloud.google.com/storage/docs/gsutil_install#windows
+  [Landsat Data]: https://cloud.google.com/storage/docs/public-datasets/landsat 
