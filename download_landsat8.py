@@ -112,7 +112,7 @@ def download(path, row, date):
 	dobj = parse_date(date)
 	data_path_str = check_date(path, row, dobj)
 	if not os.path.isdir('./data'):
-	os.mkdir('./data')
+		os.mkdir('./data')
 	logger.info('Downloading the data...')
 	p = Popen('gsutil cp '+data_path_str+' ./data', stdout=PIPE, stderr=PIPE, shell=True)
 	stdout = p.stdout.read()
