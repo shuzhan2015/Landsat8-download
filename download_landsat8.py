@@ -111,6 +111,8 @@ def download(path, row, date):
 	path_str = 'gs://earthengine-public/landsat/L8/' + path + '/' + row
 	dobj = parse_date(date)
 	data_path_str = check_date(path, row, dobj)
+	if not os.path.isdir('./data'):
+	os.mkdir('./data')
 	logger.info('Downloading the data...')
 	p = Popen('gsutil cp '+data_path_str+' ./data', stdout=PIPE, stderr=PIPE, shell=True)
 	stdout = p.stdout.read()
@@ -165,7 +167,6 @@ def bunzip2_untar_file(path, row, date):
 	logger.info('\nExtracting the data...')
 	tar.extractall()
 	tar.close()
-	os.remove(f)
 
 def logger():
 	logger = logging.getLogger()
