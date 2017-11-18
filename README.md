@@ -4,7 +4,7 @@ from Google Cloud Storage using Google's gsutil tool and then extract the bz fil
 You can read more about the Google Cloud Storage public datasets project for [Landsat Data][]. 
 
 ## Prerequisites
-You need to have the Google Cloud Storage `gsutil` command line tool 
+You need to have Ptyhon 2.7 installed. You also need to have the Google Cloud Storage `gsutil` command line tool 
 installed on your laptop or computer. If you are using Windows, the 
 installation instruction from Google is [here][]. For MacOS/Linux users, 
 the installation instruction is:
