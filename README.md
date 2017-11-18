@@ -52,12 +52,14 @@ the installation instruction is:
     $ ./download_landsat8.py -p 22 -r 39
   ```
   Or, you can also specify the path and row in the config file. Change the path and row in 
-  config file, do not put a zero before the path and row number. So you can aslo run the script 
-  by omitting the path and row arguments:
+  config file, do not put a zero before the path and row number: 
   ```sh
     $ ./download_landsat8.py -d 20170401
   ```
-
+  The downloaded file is in a compressed bz and tar format. The script will automatically 
+  unzip the bz file and untar the tar file. It will also create the corresponding directory 
+  for the unzipped files and move the files to this directory. 
+  
   <!--refs-->
   [here]: https://cloud.google.com/storage/docs/gsutil_install#windows
   [Landsat Data]: https://cloud.google.com/storage/docs/public-datasets/landsat 
