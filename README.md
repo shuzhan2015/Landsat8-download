@@ -3,7 +3,7 @@ This python script can automate the work of downloading Landsat 8 data
 from Google Cloud Storage using Google's gsutil tool and then extract the bz file.
 You can read more about the Google Cloud Storage public datasets project for [Landsat Data][]. 
 
-Note: Beginning late 2017, USGS started to remove Landsat Pre-Collection data and archive Collection 1 data. The naming convention for the Landsat dataset was also changed. `download_landsat8_new.py` is the script you should run now, since the old `download_landsat8.py` will not work for the new change. 
+**Note**: Beginning late 2017, USGS started to remove Landsat Pre-Collection data and started to archive Collection 1 data. The naming convention for the Landsat dataset was also changed. `download_landsat8_new.py` is the script you should run now, since the old `download_landsat8.py` will not work for the new change. 
 
 ## Prerequisites
 You need to have Ptyhon 2.7 installed. You also need to have the Google Cloud Storage `gsutil` command line tool 
