@@ -103,7 +103,7 @@ def check_date(path, row, dobj):
                             if data[-3:-1] == 'T1':
                                 result = data 
                 if result:
-		    logger.info('%s_* is found in the directory.' % (data_str))
+		    logger.info('%s_* is found in the cloud directory.' % (data_str))
 		    return result  
                 else:
                     logger.error("The data for the date you requested is not in the directory. Please type a different date!")
@@ -147,6 +147,25 @@ def parse_command_line():
 
 	return args
 
+def make_dir(path, row, date):
+    '''
+        This method will create the corresponding directory for the file and move the file to this directory.
+    '''
+    dobj = parse_date(date)
+    path, row = parse_path_row(path, row)
+    date_str = dobj.strftime('%Y-%m-%d')
+    date_str1 = dobj.strftime('%Y%m%d')
+    path_row = path + '-' + row
+
+    if not os.path.isdir('./data/'+path_row):
+        os.mkdir('./data/'+path_row)
+    if not os.path.isdir('./data/'+path_row+'/'+date_str):
+        os.mkdir('./data/'+path_row+'/'+date_str)
+    f_list = glob.glob('./data/LC08_L1TP_'+path+row+'_'+date_str1+'*')
+    f = f_list[0]
+    f = os.path.basename(f)
+    os.rename('./data/'+f, './data/'+path_row+'/'+date_str)
+
 def logger():
 	logger = logging.getLogger()
 	logger.setLevel(logging.INFO)
@@ -167,3 +186,5 @@ if __name__ == '__main__':
 
 	download(path, row, date)
 	logger.info('Download complete!\n')
+        make_dir(path, row, date)
+        logger.info('\nComplete!\n')
